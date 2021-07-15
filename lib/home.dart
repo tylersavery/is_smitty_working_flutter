@@ -30,11 +30,9 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _loading = true;
     });
-
     final url = date != null
         ? "$API_BASE_URL/schedule/?timestamp=${date.millisecondsSinceEpoch / 1000}"
         : "$API_BASE_URL/schedule/";
-    print(url);
 
     try {
       final response = await Dio().get(url);
